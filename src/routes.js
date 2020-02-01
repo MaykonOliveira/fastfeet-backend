@@ -9,6 +9,8 @@ const routes = Router();
 
 routes.post('/sessions', SessionController.store);
 
+routes.get('/recipients', RecipientController.index);
 routes.post('/recipients', authAdminMiddleware, RecipientController.store);
+routes.put('/recipients/:id', authAdminMiddleware, RecipientController.update);
 
 export default routes;
