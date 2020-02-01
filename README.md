@@ -1,2 +1,46 @@
-# fastfeet-backend
-Backend module of the FastFeet a shipping company
+<h1 align="center">
+  <img alt="Fastfeet" title="Fastfeet" src="docs/images/logo.png" width="300px" />
+</h1>
+
+<p align="center">
+  <img alt="GitHub top language" src="https://img.shields.io/github/languages/top/MaykonOliveira/fastfeet-backend.svg">
+
+  <img alt="GitHub language count" src="https://img.shields.io/github/languages/count/MaykonOliveira/fastfeet-backend.svg">
+
+  <img alt="Repository size" src="https://img.shields.io/github/repo-size/MaykonOliveira/fastfeet-backend.svg">
+
+  <a href="https://github.com/MaykonOliveira/fastfeet-backend/commits/master">
+    <img alt="GitHub last commit" src="https://img.shields.io/github/last-commit/MaykonOliveira/fastfeet-backend.svg">
+  </a>
+
+  <a href="https://github.com/MaykonOliveira/fastfeet-backend/issues">
+    <img alt="Repository issues" src="https://img.shields.io/github/issues/MaykonOliveira/fastfeet-backend.svg">
+  </a>
+
+  <img alt="GitHub" src="https://img.shields.io/github/license/MaykonOliveira/fastfeet-backend.svg">
+</p>
+
+# Prerequisites
+
+- Node
+- Yarn
+- Docker
+- Docker Compose
+
+# Run the project
+
+To run this project you need execute the following steps:
+
+1. First Step.
+
+# Observations
+
+# What are the next steps?
+
+- [ ] Next Step
+
+## License
+
+MIT
+
+See the [License](LICENSE.md) file.
