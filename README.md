@@ -31,7 +31,15 @@
 
 To run this project you need execute the following steps:
 
-1. First Step.
+1. Clone the repository: `git clone git@github.com:MaykonOliveira/fastfeet-backend.git`
+
+2. Enter in the directory of the project: `cd fastfeet-backend`
+
+3. Install the dependencies: `yarn`
+
+4. Execute the docker-compose to up the docker with the postgres DB: `docker-compose-up -d`
+
+4. Run the project: `yarn dev`
 
 # Observations
 
