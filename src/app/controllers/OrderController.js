@@ -71,6 +71,40 @@ class OrderController {
 
     return res.json(order);
   }
+
+  async update(req, res) {
+    const schema = Yup.object().shape({
+      product: Yup.string(),
+      recipient_id: Yup.number().integer(),
+      deliveryman_id: Yup.number().integer(),
+    });
+
+    if (!(await schema.isValid(req.body))) {
+      return res.status(400).json({ error: 'Schema of the body is invalid.' });
+    }
+
+    const order = await Order.findByPk(req.params.id);
+
+    if (!order) {
+      return res.status(401).json({ error: 'The order id cannot be found.' });
+    }
+
+    const updatedOrder = await order.update(req.body);
+
+    return res.json(updatedOrder);
+  }
+
+  async destroy(req, res) {
+    const order = await Order.findByPk(req.params.id);
+
+    if (!order) {
+      return res.status(401).json({ error: 'The order ID cannot be found.' });
+    }
+
+    await order.destroy();
+
+    return res.json();
+  }
 }
 
 export default new OrderController();
