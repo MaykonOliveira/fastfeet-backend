@@ -45,7 +45,7 @@ To run this project you need execute the following steps:
 
 # What are the next steps?
 
-- [ ] Next Step
+- [ ] Send an email to the delivery man when have a new order in your name.
 
 ## License
 
