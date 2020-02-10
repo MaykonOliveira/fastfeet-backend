@@ -46,6 +46,7 @@ To run this project you need execute the following steps:
 # What are the next steps?
 
 - [ ] Send an email to the delivery man when have a new order in your name.
+- [ ] Send an email to the delivery man when an order be canceled.
 - [ ] Implement limit of start order per day.
 - [ ] Create endpoint to list orders with some problem.
 
