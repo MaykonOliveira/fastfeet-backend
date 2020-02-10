@@ -11,7 +11,7 @@ class OrdersEndController {
         .required(),
     });
 
-    if (!(await schema.isValid(req.params))) {
+    if (!(await schema.isValid(req.body))) {
       return res
         .status(400)
         .json({ error: 'Schema of the params is invalid.' });
@@ -19,7 +19,7 @@ class OrdersEndController {
 
     const now = new Date();
 
-    const { orderId, deliverymanId, signature_id } = req.params;
+    const { orderId, deliverymanId } = req.params;
 
     const order = await Order.findOne({
       where: {
@@ -41,7 +41,7 @@ class OrdersEndController {
 
     const updatedOrder = await order.update({
       end_date: now,
-      signature_id,
+      signature_id: req.body.signature_id,
     });
 
     return res.json(updatedOrder);
