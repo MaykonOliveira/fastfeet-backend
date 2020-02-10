@@ -10,6 +10,7 @@ import OrderController from './app/controllers/OrderController';
 import DeliverymanOrdersController from './app/controllers/DeliverymanOrdersController';
 import OrdersStartController from './app/controllers/OrdersStartController';
 import OrdersEndController from './app/controllers/OrdersEndController';
+import OrderProblemsController from './app/controllers/OrderProblemsController';
 
 import authAdminMiddleware from './app/middlewares/admin/auth';
 
@@ -29,6 +30,9 @@ routes.put(
   '/deliveryman/:deliverymanId/orders/:orderId/end',
   OrdersEndController.update
 );
+
+routes.get('/order/:id/problems', OrderProblemsController.index);
+routes.post('/order/:id/problems', OrderProblemsController.store);
 
 routes.use(authAdminMiddleware);
 

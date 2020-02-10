@@ -1,8 +1,9 @@
 import { Op } from 'sequelize';
 import Order from '../models/Order';
-import Deliveryman from '../models/Deliveryman';
-import Recipient from '../models/Recipient';
-import File from '../models/File';
+
+import RecipientInclude from './includes/RecipientInclude';
+import DeliverymanInclude from './includes/DeliverymanInclude';
+import SignatureInclude from './includes/SignatureInclude';
 
 class DeliverymanOrdersController {
   async index(req, res) {
@@ -24,39 +25,7 @@ class DeliverymanOrdersController {
     const orders = await Order.findAll({
       where: filter,
       attributes: ['id', 'product', 'canceled_at', 'start_date', 'end_date'],
-      include: [
-        {
-          model: Recipient,
-          as: 'recipient',
-          attributes: [
-            'id',
-            'name',
-            'street',
-            'number',
-            'complement',
-            'state',
-            'city',
-            'zip_code',
-          ],
-        },
-        {
-          model: Deliveryman,
-          as: 'deliveryman',
-          attributes: ['id', 'name', 'email'],
-          include: [
-            {
-              model: File,
-              as: 'avatar',
-              attributes: ['path', 'url'],
-            },
-          ],
-        },
-        {
-          model: File,
-          as: 'signature',
-          attributes: ['path', 'url'],
-        },
-      ],
+      include: [RecipientInclude, DeliverymanInclude, SignatureInclude],
     });
 
     return res.json(orders);

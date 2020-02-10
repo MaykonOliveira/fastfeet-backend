@@ -1,28 +1,16 @@
 import * as Yup from 'yup';
 import Order from '../models/Order';
 import File from '../models/File';
-import Recipient from '../models/Recipient';
 import Deliveryman from '../models/Deliveryman';
+
+import RecipientInclude from './includes/RecipientInclude';
 
 class OrderController {
   async index(req, res) {
     const orders = await Order.findAll({
       attributes: ['id', 'product', 'canceled_at', 'start_date', 'end_date'],
       include: [
-        {
-          model: Recipient,
-          as: 'recipient',
-          attributes: [
-            'id',
-            'name',
-            'street',
-            'number',
-            'complement',
-            'state',
-            'city',
-            'zip_code',
-          ],
-        },
+        RecipientInclude,
         {
           model: Deliveryman,
           as: 'deliveryman',
