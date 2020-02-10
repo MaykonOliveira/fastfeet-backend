@@ -47,7 +47,6 @@ To run this project you need execute the following steps:
 
 - [ ] Send an email to the delivery man when have a new order in your name.
 - [ ] Implement limit of start order per day.
-- [ ] Implement the OrdersEndController logic.
 
 ## License
 
